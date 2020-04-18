@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.DalSql", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.Business", "CslaSampleBlazor.Business\CslaSampleBlazor.Business.csproj", "{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSampleBlazor.Server", "CslaSampleBlazor.Server\CslaSampleBlazor.Server.csproj", "{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.Server", "CslaSampleBlazor.Server\CslaSampleBlazor.Server.csproj", "{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BB11AD4-888D-40F9-A280-40B961A56F37}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
