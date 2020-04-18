@@ -1,7 +1,55 @@
 ﻿@page "/"
+@using CslaSampleBlazor.Business.Sales
+<div class="container">
+    <div class="row">
+        <div class="col">
+            Status
+        </div>
+        <div class="col">
+            @if (Statuses == null)
+            {
+                <div>Loading Statuses...</div>
+            }
+            else
+            {
+                <select>
+                    @foreach (SalesOrderStatusInfo item in Statuses)
+                    {
+                        <option>@(item.Name)</option>
+                    }
+                </select>
+            }
+        </div>
+        <div class="col">
+            Type
+        </div>
+        <div class="col">
+            @if (Statuses == null)
+            {
+                <div>Loading Types...</div>
+            }
+            else
+            {
+                <select>
+                    @foreach (SalesOrderTypeInfo item in SalesOrderTypes)
+                    {
+                        <option>@(item.Name)</option>
+                    }
+                </select>
+            }
+        </div>
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+@code{
+    public SalesOrderStatusList Statuses { get; set; }
+    public SalesOrderTypeList SalesOrderTypes { get; set; }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    protected override async Task OnParametersSetAsync()
+    {
+        Statuses = await SalesOrderStatusList.GetSalesOrderStatusListAsync();
+        SalesOrderTypes = await SalesOrderTypeList.GetSalesOrderTypeListAsync();
+
+    }
+}

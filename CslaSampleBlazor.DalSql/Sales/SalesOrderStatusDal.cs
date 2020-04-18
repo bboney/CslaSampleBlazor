@@ -15,7 +15,7 @@ namespace CslaSampleBlazor.DalSql.Sales
         public List<SalesOrderStatusDto> FetchList()
         {
             List<SalesOrderStatusDto> list = new List<SalesOrderStatusDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -34,7 +34,7 @@ namespace CslaSampleBlazor.DalSql.Sales
 
         public SalesOrderStatusDto Fetch(int salesOrderStatusKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -56,7 +56,7 @@ namespace CslaSampleBlazor.DalSql.Sales
             string salesOrderStatusId,
             Int16 salesOrderStatusValue)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -83,7 +83,7 @@ namespace CslaSampleBlazor.DalSql.Sales
             string salesOrderStatusId,
             Int16 salesOrderStatusValue)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -113,7 +113,7 @@ namespace CslaSampleBlazor.DalSql.Sales
 
         public void Delete(int salesOrderStatusKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -126,7 +126,7 @@ namespace CslaSampleBlazor.DalSql.Sales
 
         public bool Exists(string salesOrderStatusId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -140,7 +140,7 @@ namespace CslaSampleBlazor.DalSql.Sales
 
         public int GetKey(string salesOrderStatusId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();

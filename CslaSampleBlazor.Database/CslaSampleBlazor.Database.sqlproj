@@ -87,4 +87,7 @@
     <Build Include="StoredProcedures\spseNavigationUpdate.sql" />
     <Build Include="StoredProcedures\spseUserNavigationListSelect.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CslaSampleBlazor.Database.publish.xml" />
+  </ItemGroup>
 </Project>

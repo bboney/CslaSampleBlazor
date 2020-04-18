@@ -19,7 +19,7 @@ namespace CslaSampleBlazor.DalSql.Security
         public List<NavigationDto> FetchUserList(int navigationType, int userKey)
         {
             List<NavigationDto> list = new List<NavigationDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 using (var cm = (SqlCommand)cn.CreateCommand())
@@ -45,7 +45,7 @@ namespace CslaSampleBlazor.DalSql.Security
         public List<NavigationDto> FetchList()
         {
             List<NavigationDto> list = new List<NavigationDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 using (var cm = (SqlCommand)cn.CreateCommand())
@@ -69,7 +69,7 @@ namespace CslaSampleBlazor.DalSql.Security
 
         public NavigationDto Fetch(int navigationKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 using (var cm = (SqlCommand)cn.CreateCommand()) 
@@ -98,7 +98,7 @@ namespace CslaSampleBlazor.DalSql.Security
                                 string spriteCssClass,
                                 string url)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = (SqlCommand)cn.CreateCommand();
@@ -137,7 +137,7 @@ namespace CslaSampleBlazor.DalSql.Security
                                 string spriteCssClass,
                                 string url)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = (SqlCommand)cn.CreateCommand();
@@ -173,7 +173,7 @@ namespace CslaSampleBlazor.DalSql.Security
 
         public void Delete(int navigationKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = (SqlCommand)cn.CreateCommand();
@@ -186,7 +186,7 @@ namespace CslaSampleBlazor.DalSql.Security
 
         public bool Exists(string navigationId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = (SqlCommand)cn.CreateCommand();
@@ -200,7 +200,7 @@ namespace CslaSampleBlazor.DalSql.Security
 
         public int GetKey(string navigationId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = (SqlCommand)cn.CreateCommand();

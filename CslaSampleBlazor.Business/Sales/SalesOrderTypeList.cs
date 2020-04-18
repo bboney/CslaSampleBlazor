@@ -15,7 +15,7 @@ namespace CslaSampleBlazor.Business.Sales
         #region Business Rules
         private static void AddObjectAuthorizationRules()
         {
-            Csla.Rules.BusinessRules.AddRule(typeof(SalesOrderTypeList), new HasPrivilegeClaim(Csla.Rules.AuthorizationActions.GetObject, "SalesOrderView", "ManagementOpenOrdersView", "SalespersonOpenOrdersView"));
+            //Csla.Rules.BusinessRules.AddRule(typeof(SalesOrderTypeList), new HasPrivilegeClaim(Csla.Rules.AuthorizationActions.GetObject, "SalesOrderView", "ManagementOpenOrdersView", "SalespersonOpenOrdersView"));
         }
 
         #endregion

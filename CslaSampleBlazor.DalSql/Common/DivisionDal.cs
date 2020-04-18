@@ -15,7 +15,7 @@ namespace CslaSampleBlazor.DalSql.Common
         public List<DivisionDto> FetchList()
         {
             List<DivisionDto> list = new List<DivisionDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -34,7 +34,7 @@ namespace CslaSampleBlazor.DalSql.Common
 
         public DivisionDto Fetch(int divisionKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -56,7 +56,7 @@ namespace CslaSampleBlazor.DalSql.Common
             int divisionValue,
             string name)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -83,7 +83,7 @@ namespace CslaSampleBlazor.DalSql.Common
             int modifiedByUserKey,
             string name)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -113,7 +113,7 @@ namespace CslaSampleBlazor.DalSql.Common
 
         public void Delete(int divisionKey)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -126,7 +126,7 @@ namespace CslaSampleBlazor.DalSql.Common
 
         public bool Exists(string divisionId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
@@ -140,7 +140,7 @@ namespace CslaSampleBlazor.DalSql.Common
 
         public int GetKey(string divisionId)
         {
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["FourSiteDb"].ConnectionString))
+            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
             {
                 cn.Open();
                 var cm = cn.CreateCommand();
