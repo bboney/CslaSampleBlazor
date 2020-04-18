@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSampleBlazor.Dal", "CslaSampleBlazor.Dal\CslaSampleBlazor.Dal.csproj", "{5C9A8031-4EE7-4E21-90B5-497B9F44BF33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.Dal", "CslaSampleBlazor.Dal\CslaSampleBlazor.Dal.csproj", "{5C9A8031-4EE7-4E21-90B5-497B9F44BF33}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CslaSampleBlazor.Database", "CslaSampleBlazor.Database\CslaSampleBlazor.Database.sqlproj", "{E190A185-9576-4326-9A5E-F7EDC635F87C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSampleBlazor.DalSql", "CslaSampleBlazor.DalSql\CslaSampleBlazor.DalSql.csproj", "{41724388-DA58-4618-8805-69177409DC23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.DalSql", "CslaSampleBlazor.DalSql\CslaSampleBlazor.DalSql.csproj", "{41724388-DA58-4618-8805-69177409DC23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSampleBlazor.Business", "CslaSampleBlazor.Business\CslaSampleBlazor.Business.csproj", "{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslaSampleBlazor.Business", "CslaSampleBlazor.Business\CslaSampleBlazor.Business.csproj", "{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSampleBlazor.Server", "CslaSampleBlazor.Server\CslaSampleBlazor.Server.csproj", "{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1EDAEA1-7852-4348-8277-B4B8B2A61E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE79CCB0-C6CC-4008-94FC-8197AE1AB0A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
