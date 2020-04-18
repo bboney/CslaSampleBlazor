@@ -19,6 +19,7 @@ using CslaSampleBlazor.Dal.Security;
 using Microsoft.AspNetCore.Authentication;
 using CslaSampleBlazor.DalSql.Security;
 using System.Net.Security;
+using Microsoft.Data.SqlClient;
 
 namespace CslaSampleBlazor.Server
 {
@@ -45,7 +46,7 @@ namespace CslaSampleBlazor.Server
             services.AddTransient<ISalesOrderStatusDal, SalesOrderStatusDal>();
             services.AddTransient<ISalesOrderTypeDal, SalesOrderTypeDal>();
             services.AddTransient<INavigationDal, NavigationDal>();
-
+            services.AddTransient<SqlConnection>(e => new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString));
 
             services.AddHttpContextAccessor();
             services.AddCsla().WithBlazorServerSupport();

@@ -15,15 +15,21 @@ using System.Diagnostics;
 namespace CslaSampleBlazor.DalSql.Sales
 {
     public class SalesOrderTypeDal : ISalesOrderTypeDal
-    { 
+    {
+        public SqlConnection conn { get; set; }
+
+        public SalesOrderTypeDal(SqlConnection connection)
+        {
+            conn = connection;
+        }
 
         public List<SalesOrderTypeDto> FetchList()
         {
             List<SalesOrderTypeDto> list = new List<SalesOrderTypeDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
+            using (conn)
             {
-                cn.Open();
-                using (var cm = (SqlCommand)cn.CreateCommand())
+                conn.Open();
+                using (var cm = (SqlCommand)conn.CreateCommand())
                 {
                     cm.CommandType = System.Data.CommandType.StoredProcedure;
                     cm.CommandText = "spsoSalesOrderTypeListSelect";

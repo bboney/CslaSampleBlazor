@@ -12,20 +12,29 @@ namespace CslaSampleBlazor.DalSql.Sales
 {
     public class SalesOrderStatusDal : ISalesOrderStatusDal
     {
+        public SqlConnection conn { get; set; }
+
+        public SalesOrderStatusDal(SqlConnection connection)
+        {
+            conn = connection;
+        }
+
         public List<SalesOrderStatusDto> FetchList()
         {
             List<SalesOrderStatusDto> list = new List<SalesOrderStatusDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
+            using (conn)
             {
-                cn.Open();
-                var cm = cn.CreateCommand();
-                cm.CommandType = System.Data.CommandType.StoredProcedure;
-                cm.CommandText = "spsoSalesOrderStatusListSelect";
-                using (SafeSqlDataReader data = new SafeSqlDataReader(cm.ExecuteReader()))
+                conn.Open();
+                using (var cm = conn.CreateCommand())
                 {
-                    while (data.Read())
+                    cm.CommandType = System.Data.CommandType.StoredProcedure;
+                    cm.CommandText = "spsoSalesOrderStatusListSelect";
+                    using (SafeSqlDataReader data = new SafeSqlDataReader(cm.ExecuteReader()))
                     {
-                        list.Add(LoadDto(data));
+                        while (data.Read())
+                        {
+                            list.Add(LoadDto(data));
+                        }
                     }
                 }
             }

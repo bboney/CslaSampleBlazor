@@ -16,13 +16,19 @@ namespace CslaSampleBlazor.DalSql.Security
 {
     public class NavigationDal : INavigationDal
     {
+        public SqlConnection conn { get; set; }
+
+        public NavigationDal(SqlConnection connection)
+        {
+            conn = connection;
+        }
         public List<NavigationDto> FetchUserList(int navigationType, int userKey)
         {
             List<NavigationDto> list = new List<NavigationDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
+            using (conn)
             {
-                cn.Open();
-                using (var cm = (SqlCommand)cn.CreateCommand())
+                conn.Open();
+                using (var cm = (SqlCommand)conn.CreateCommand())
                 {
                     cm.CommandType = System.Data.CommandType.StoredProcedure;
                     cm.CommandText = "spseUserNavigationListSelect";
