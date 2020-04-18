@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CslaSampleBlazor.Server.Data;
 using Csla.Configuration;
 using System.Globalization;
 using CslaSampleBlazor.Dal.Common;
