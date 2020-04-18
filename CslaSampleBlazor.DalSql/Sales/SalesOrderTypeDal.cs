@@ -11,19 +11,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Csla.Data;
 
 namespace CslaSampleBlazor.DalSql.Sales
 {
     public class SalesOrderTypeDal : ISalesOrderTypeDal
-    { 
+    {
+
+        private ConnectionManager<SqlConnection> conn;
+
+        public SalesOrderTypeDal(ConnectionManager<SqlConnection> connection)
+        {
+            conn = connection;
+        }
 
         public List<SalesOrderTypeDto> FetchList()
         {
             List<SalesOrderTypeDto> list = new List<SalesOrderTypeDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
+            using (conn)
             {
-                cn.Open();
-                using (var cm = (SqlCommand)cn.CreateCommand())
+                using (var cm = (SqlCommand)conn.Connection.CreateCommand())
                 {
                     cm.CommandType = System.Data.CommandType.StoredProcedure;
                     cm.CommandText = "spsoSalesOrderTypeListSelect";

@@ -11,18 +11,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Csla.Data;
 
 namespace CslaSampleBlazor.DalSql.Security
 {
     public class NavigationDal : INavigationDal
     {
+        private ConnectionManager<SqlConnection> conn;
+
+        public NavigationDal(ConnectionManager<SqlConnection> connection)
+        {
+            conn = connection;
+        }
+
         public List<NavigationDto> FetchUserList(int navigationType, int userKey)
         {
             List<NavigationDto> list = new List<NavigationDto>();
-            using (var cn = new SqlConnection(ConfigurationManager.ConnectionStrings["CslaSampleBlazorDb"].ConnectionString))
+            using (conn)
             {
-                cn.Open();
-                using (var cm = (SqlCommand)cn.CreateCommand())
+                using (var cm = (SqlCommand)conn.Connection.CreateCommand())
                 {
                     cm.CommandType = System.Data.CommandType.StoredProcedure;
                     cm.CommandText = "spseUserNavigationListSelect";
