@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Csla.Data.SqlClient" Version="5.1.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.7" />
   </ItemGroup>
 
   <ItemGroup>
